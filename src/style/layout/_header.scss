@@ -3,6 +3,7 @@
   height: 10rem;
   display: flex;
   justify-content: start;
+  border-bottom: 4px solid $dark;
 
   .content {
     display: flex;
@@ -10,9 +11,13 @@
     justify-content: space-between;
 
     .title {
-      margin-left: 10px;
+      margin-left: 20px;
       font-size: 5rem;
       color: $dark;
+    }
+
+    .btn {
+      margin-left: 20px;
     }
   }
 }

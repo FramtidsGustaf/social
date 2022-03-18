@@ -1,7 +1,9 @@
 import LandingPage from '../pages/LandingPage.vue';
 import ScoreboardPage from '../pages/ScoreboardPage.vue';
-import AuthPage from '../pages/AuthPage.vue';
 import StatusPage from '../pages/StatusPage.vue';
+import LoginPage from '../pages/LoginPage.vue';
+import NotFound from '../pages/NotFound.vue';
+import SigninPage from '../pages/SigninPage.vue';
 
 export default [
   {
@@ -10,14 +12,22 @@ export default [
   },
   {
     path: '/scoreboard',
-    component: ScoreboardPage
+    component: ScoreboardPage,
   },
   {
-    path: '/auth',
-    component: AuthPage
+    path: '/login',
+    component: LoginPage,
+  },
+  {
+    path: '/signin',
+    component: SigninPage,
   },
   {
     path: '/status',
-    component: StatusPage
-  }
+    component: StatusPage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound,
+  },
 ];

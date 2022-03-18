@@ -1,0 +1,38 @@
+.auth-form {
+  width: fit-content;
+  height: 20rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  .title {
+    text-transform: capitalize;
+    align-self: flex-start;
+    font-size: 13rem;
+  }
+
+  .btn {
+    align-self: flex-start;
+    margin-top: 3rem;
+  }
+
+  &.valid {
+    animation: validInput 2s forwards;
+  }
+}
+
+@keyframes validInput {
+  0% {
+    transform: translate(-50%, -50%);
+  } 
+  5% {
+    transform: translate(-50%, -10%);
+  }
+  100% {
+    transform: translate(-50%, -10000%);
+  }
+}

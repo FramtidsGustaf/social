@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>Authentication</h1>
+  <h2>404 Not Found</h2>
 </template>
 
 <style lang="scss">

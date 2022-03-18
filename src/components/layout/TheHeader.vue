@@ -9,14 +9,10 @@
         <h1 class="title">Social</h1>
       </router-link>
       <div class="buttons">
-        <Button type="dark" to="auth">Login</Button>
-        <Button type="dark" to="status">Status</Button>
-        <Button type="gradientAnimated" to="scoreboard">Scoreboard</Button>
+        <Button type="dark" to="/login">Login</Button>
+        <Button type="dark" to="/status">Status</Button>
+        <Button type="gradientAnimated" to="/scoreboard">Scoreboard</Button>
       </div>
     </div>
   </div>
 </template>
-
-<style lang="scss">
-
-</style>
