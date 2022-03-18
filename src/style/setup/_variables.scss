@@ -5,5 +5,10 @@ $light: #FDFFFC;
 $white: #FFF;
 $success: #2EC4B6;
 $danger: #E71D36;
-$waring: #FF9F1C;
+$warning: #FF9F1C;
 
+//FONTS
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+
+$main-font: 'Fira Mono', monospace;

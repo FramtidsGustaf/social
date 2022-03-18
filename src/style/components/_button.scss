@@ -1,0 +1,108 @@
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: .8rem 2rem;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 500;
+  color: $dark;
+  background-color: $light;
+
+  &:hover {
+    background-color: $warning;
+  }
+
+  &--dark {
+    background-color: $dark;
+    color: $light;
+
+    &:hover {
+      background-color: rgba($dark, 0.8);
+    }
+  }
+
+  &--hollow {
+    background-color: $light;
+    border: 2px solid $dark;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .1s ease;
+    }
+    
+    &::after {
+      z-index: -2;
+      background: $dark;
+      transform: translateY(100%);
+    }
+
+    &::before {
+      z-index: -1;
+      background-color: $success;
+      transform: translateX(100%);
+    }
+
+    &:hover,
+    &:active {
+      color: $light;
+      background-color: transparent;
+    }
+
+    &:hover {
+
+      &::after{
+        transform: translateY(0);
+      }
+    }
+
+    &:active {
+
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &--gradient {
+    background: linear-gradient(90deg, rgba($danger, .7), rgba($warning, .7));
+    
+    &:hover {
+      background: linear-gradient(90deg, rgba($danger, 1), rgba($warning, 1));
+    }
+
+    &-animated {
+      background-size: 200% 200%;
+      animation: Gradient 5s infinite;
+
+      &:hover,
+      &:active {
+        background-size: 200% 200%;
+        animation: Gradient 5s infinite;
+      }
+
+
+      @keyframes Gradient {
+        0%{
+          background-position: 0% 0%;
+        }
+        50%{
+          background-position: 100% 0%;
+        }
+        100%{
+          background-position: 0% 0%;
+        }
+      }
+    }
+  }
+}
