@@ -8,7 +8,7 @@ import BaseButton from './components/UI/BaseButton.vue';
 
 const app = createApp(App);
 
-app.component(BaseButton);
+app.component('Button', BaseButton);
 
 app.use(router);
 

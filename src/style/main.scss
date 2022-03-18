@@ -1,5 +1,9 @@
 @import 'setup/variables';
 @import 'setup/global';
+@import 'setup/typography';
 
 //COMPONENTES
 @import 'components/button';
+
+//LAYOUT
+@import 'layout/header';

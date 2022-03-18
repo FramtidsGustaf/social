@@ -1,20 +1,14 @@
 .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   padding: .8rem 2rem;
   outline: none;
   cursor: pointer;
   border: none;
-  font-family: $main-font;
   font-size: 16px;
   font-weight: 500;
   color: $dark;
   background-color: $light;
-
-  &:hover {
-    background-color: $warning;
-  }
+  margin: 0 10px;
 
   &--dark {
     background-color: $dark;
@@ -29,49 +23,6 @@
     background-color: $light;
     border: 2px solid $dark;
     overflow: hidden;
-
-    &::before,
-    &::after {
-      content: '';
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: all .1s ease;
-    }
-    
-    &::after {
-      z-index: -2;
-      background: $dark;
-      transform: translateY(100%);
-    }
-
-    &::before {
-      z-index: -1;
-      background-color: $success;
-      transform: translateX(100%);
-    }
-
-    &:hover,
-    &:active {
-      color: $light;
-      background-color: transparent;
-    }
-
-    &:hover {
-
-      &::after{
-        transform: translateY(0);
-      }
-    }
-
-    &:active {
-
-      &::before {
-        transform: translateX(0);
-      }
-    }
   }
 
   &--gradient {

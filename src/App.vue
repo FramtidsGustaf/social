@@ -1,11 +1,11 @@
 <script setup>
-import BaseButton from './components/UI/BaseButton.vue';
+import TheHeader from './components/layout/TheHeader.vue';
 
 </script>
 
 <template>
+  <TheHeader/>
   <router-view></router-view>
-  <BaseButton>Hejsan</BaseButton>
 </template>
 
 <style lang="scss">
