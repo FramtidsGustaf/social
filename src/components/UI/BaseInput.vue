@@ -20,9 +20,13 @@ const isTyping = ref(false);
 
 const emit = defineEmits(['update:modelValue']);
 
-const handleInput = () => {
+const toggleLable = () => {
   if (input.value) isTyping.value = true;
   else isTyping.value = false;
+}
+
+const handleInput = () => {
+  toggleLable();
   emit('update:modelValue', input.value);
 }
 
