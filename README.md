@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# Social
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A user interface built with:
 
-## Recommended IDE Setup
+- Vue 3
+- Sass/Scss
+- Vite
+- Pinia (not yet implemented)
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+A Backend will be built in a while.
+
+Backend will consist of
+
+- Node.js
+- Express
+
+> ### Feel free to connect
+> [linkedin](https://www.linkedin.com/in/gustaf-johnsson-814664134/)
