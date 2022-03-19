@@ -6,6 +6,3 @@ import AuthForm from '../components/UI/AuthForm.vue';
 <template>
   <AuthForm action="signin" />
 </template>
-
-<style lang="scss">
-</style>

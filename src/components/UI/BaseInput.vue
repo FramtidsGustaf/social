@@ -46,6 +46,3 @@ const handleInput = () => {
     />
   </div>
 </template>
-
-<style lang="scss">
-</style>
