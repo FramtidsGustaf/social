@@ -5,7 +5,7 @@ A user interface built with:
 - Vue 3
 - Sass/Scss
 - Vite
-- Pinia (not yet implemented)
+- Pinia
 
 A Backend will be built in a while.
 
