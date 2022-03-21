@@ -29,8 +29,9 @@ export default [
     component: PostPage,
     beforeEnter: (_to, _from, next) => {
       const store = useUserStore();
-      if (store.isLogedIn) return true;
-      next({ name: 'Login' });
+      console;
+      if (store.isLogedIn) next();
+      else next({ name: 'Login' });
     },
   },
   {
