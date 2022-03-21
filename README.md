@@ -7,9 +7,7 @@ A user interface built with:
 - Vite
 - Pinia
 
-A Backend will be built in a while.
-
-Backend will consist of
+Backend has no repo yet but consists of:
 
 - Node.js
 - Express
