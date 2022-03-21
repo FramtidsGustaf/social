@@ -15,12 +15,12 @@ const username = ref('');
 const password = ref('');
 const isValid = ref(false);
 const link = props.action === 'login' ?
-  { title: "Don't have an account?", destination: '/signin' } :
+  { title: "Don't have an account?", destination: '/signup' } :
   { title: "Already have an account?", destination: '/login' };
 
 const handleSubmit = () => {
   if (props.action === 'login') store.logIn(username.value, password.value);
-  if (props.action === 'signin') store.signin(username.value, password.value);
+  if (props.action === 'signup') store.signup(username.value, password.value);
 }
 </script>
 

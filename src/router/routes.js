@@ -3,7 +3,7 @@ import LeaderboardPage from '../pages/LeaderboardPage.vue';
 import PostPage from '../pages/PostPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import NotFound from '../pages/NotFound.vue';
-import SigninPage from '../pages/SigninPage.vue';
+import SignupPage from '../pages/SignupPage.vue';
 import { useUserStore } from '../store/user_store/store';
 
 export default [
@@ -21,8 +21,8 @@ export default [
     component: LoginPage,
   },
   {
-    path: '/signin',
-    component: SigninPage,
+    path: '/signup',
+    component: SignupPage,
   },
   {
     path: '/post',
