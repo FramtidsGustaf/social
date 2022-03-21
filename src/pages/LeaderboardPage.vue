@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <h1>Scoreboard</h1>
+  <h1>Leaderboardboard</h1>
 </template>

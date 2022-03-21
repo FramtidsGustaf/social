@@ -1,5 +1,5 @@
 import LandingPage from '../pages/LandingPage.vue';
-import ScoreboardPage from '../pages/ScoreboardPage.vue';
+import LeaderboardPage from '../pages/LeaderboardPage.vue';
 import StatusPage from '../pages/StatusPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import NotFound from '../pages/NotFound.vue';
@@ -11,8 +11,8 @@ export default [
     component: LandingPage,
   },
   {
-    path: '/scoreboard',
-    component: ScoreboardPage,
+    path: '/leaderboard',
+    component: LeaderboardPage,
   },
   {
     path: '/login',
