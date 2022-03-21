@@ -6,7 +6,7 @@ export const useUserStore = defineStore('userStore', {
     return {
       isLogedIn: false,
       tier: 0,
-      token: null,
+      username: '',
     };
   },
   actions: {
@@ -14,7 +14,7 @@ export const useUserStore = defineStore('userStore', {
       this.authAction(username, password, 'login');
     },
     signin(username, password) {
-      this.authAction(username, password, 'signin');
+      this.authAction(username, password, 'signup');
     },
     async authAction(username, password, endpoint) {
       try {
@@ -28,18 +28,48 @@ export const useUserStore = defineStore('userStore', {
             password,
           }),
         });
-        const data = await response.json();
         if (!response.ok) return;
-        this.token = data.token;
-        this.isLogedIn = true;
+
+        const data = await response.json();
+        const { token, username, tier } = data;
+
+        this.setToLogedIn(token, username, tier);
         router.push('/post');
-        //TODO store token in localstorage
       } catch (error) {
         console.log(error);
         //TODO some error handling
       }
+    },
+    async verifyToken() {
+      const storedToken = localStorage.getItem('token');
 
-      //TODO Set tier when backend supports tier
+      try {
+        const response = await fetch(
+          'http://localhost:8000/auth/verify-token',
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              authorization: `${storedToken}`,
+            },
+          }
+        );
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const { token, username, tier } = data;
+
+        this.setToLogedIn(token, username, tier);
+        router.push('/post');
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    setToLogedIn(token, username, tier) {
+      this.isLogedIn = true;
+      this.username = username;
+      this.tier = tier;
+      localStorage.setItem('token', token);
     },
   },
 });

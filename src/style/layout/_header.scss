@@ -2,16 +2,15 @@
   width: 100vw;
   height: 10rem;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   border-bottom: 4px solid $dark;
+  padding: 0 2rem;
 
   &--content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     &-title {
-      margin-left: 20px;
       font-size: 5rem;
       color: $dark;
     }
@@ -19,10 +18,22 @@
     .btn {
       margin-left: 20px;
     }
+  }
+
+  &--userinfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &-username {
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
 
     &-tier {
       margin-left: 2rem;
-      font-size: 5rem;
+      font-size: 2rem;
       font-family: $numbers-font;
     }
   }

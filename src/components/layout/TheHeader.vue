@@ -16,7 +16,10 @@ const store = useUserStore();
         <Button v-if="store.isLogedIn" type="dark" to="/post">Post</Button>
         <Button type="gradientAnimated" to="/leaderboard">Leaderboard</Button>
       </div>
-      <div v-if="store.isLogedIn" class="header--content-tier">Your Tier: {{ store.tier }}</div>
+    </div>
+    <div class="header--userinfo">
+      <div class="header--userinfo-username">{{ store.username }}</div>
+      <div v-if="store.isLogedIn" class="header--userinfo-tier">Your Tier: {{ store.tier }}</div>
     </div>
   </div>
 </template>

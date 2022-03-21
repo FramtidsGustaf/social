@@ -4,5 +4,5 @@ import AuthForm from '../components/AuthForm.vue';
 </script>
 
 <template>
-  <AuthForm action="signin" />
+  <AuthForm action="signup" />
 </template>
