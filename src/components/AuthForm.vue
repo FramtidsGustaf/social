@@ -1,5 +1,5 @@
 <script setup>
-import Input from './BaseInput.vue';
+import Input from './UI/BaseInput.vue';
 import { ref } from 'vue';
 
 const props = defineProps({
@@ -11,7 +11,6 @@ const props = defineProps({
 const username = ref('');
 const password = ref('');
 const isValid = ref(false);
-
 const link = props.action === 'login' ?
   { title: "Don't have an account?", destination: '/signin' } :
   { title: "Already have an account?", destination: '/login' };
@@ -23,13 +22,13 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit" class="auth-form" :class="{ valid: isValid }">
+  <div class="auth-form" :class="{ valid: isValid }">
     <h4 class="title">{{ props.action }}</h4>
-    <Input v-model="username" name="username"></Input>
-    <Input v-model="password" type="password" name="password"></Input>
+    <Input v-model="username" name="username"/>
+    <Input v-model="password" type="password" name="password"/>
     <div>
-      <Button type="gradientAnimated">{{ props.action }}</Button>
+      <Button @click="handleSubmit" type="gradientAnimated">{{ props.action }}</Button>
       <Button :to="link.destination">{{ link.title }}</Button>
     </div>
-  </form>
+  </div>
 </template>

@@ -10,8 +10,8 @@
       </router-link>
       <div class="buttons">
         <Button type="dark" to="/login">Login</Button>
-        <Button type="dark" to="/status">Status</Button>
-        <Button type="gradientAnimated" to="/scoreboard">Scoreboard</Button>
+        <Button type="dark" to="/post">Post</Button>
+        <Button type="gradientAnimated" to="/leaderboard">Leaderboard</Button>
       </div>
     </div>
   </div>
