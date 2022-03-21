@@ -1,5 +1,5 @@
 <script setup>
-import Input from './BaseInput.vue';
+import Input from './UI/BaseInput.vue';
 import { ref } from 'vue';
 
 const props = defineProps({

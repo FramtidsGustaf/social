@@ -1,6 +1,6 @@
 //Vue
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 //Router
 import router from './router/router';
 //Global Components
@@ -12,4 +12,4 @@ app.component('Button', BaseButton);
 
 app.use(router);
 
-app.mount('#app')
+app.mount('#app');
