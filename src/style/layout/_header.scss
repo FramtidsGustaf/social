@@ -5,12 +5,12 @@
   justify-content: start;
   border-bottom: 4px solid $dark;
 
-  .content {
+  &--content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .title {
+    &-title {
       margin-left: 20px;
       font-size: 5rem;
       color: $dark;
@@ -18,6 +18,12 @@
 
     .btn {
       margin-left: 20px;
+    }
+
+    &-tier {
+      margin-left: 2rem;
+      font-size: 5rem;
+      font-family: $numbers-font;
     }
   }
 }
