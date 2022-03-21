@@ -7,6 +7,7 @@ export const useUserStore = defineStore('userStore', {
       isLogedIn: false,
       tier: 0,
       username: '',
+      token: localStorage.getItem('token'),
     };
   },
   actions: {
@@ -16,7 +17,7 @@ export const useUserStore = defineStore('userStore', {
     signin(username, password) {
       this.authAction(username, password, 'signup');
     },
-    async authAction(username, password, endpoint) {
+    async authAction(inputedUsername, password, endpoint) {
       try {
         const response = await fetch(`http://localhost:8000/auth/${endpoint}`, {
           method: 'POST',
@@ -24,7 +25,7 @@ export const useUserStore = defineStore('userStore', {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username,
+            username: inputedUsername,
             password,
           }),
         });
@@ -42,8 +43,7 @@ export const useUserStore = defineStore('userStore', {
     },
     //TODO perhaps some refactoring here
     async verifyToken() {
-      const storedToken = localStorage.getItem('token');
-
+      if (!this.token) return;
       try {
         const response = await fetch(
           'http://localhost:8000/auth/verify-token',
@@ -51,7 +51,7 @@ export const useUserStore = defineStore('userStore', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              authorization: `${storedToken}`,
+              Authorization: `${this.token}`,
             },
           }
         );
