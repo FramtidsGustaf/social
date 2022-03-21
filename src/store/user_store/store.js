@@ -40,6 +40,7 @@ export const useUserStore = defineStore('userStore', {
         //TODO some error handling
       }
     },
+    //TODO perhaps some refactoring here
     async verifyToken() {
       const storedToken = localStorage.getItem('token');
 
@@ -64,6 +65,13 @@ export const useUserStore = defineStore('userStore', {
       } catch (error) {
         console.log(error);
       }
+    },
+    logout() {
+      this.isLogedIn = false;
+      this.tier = 0;
+      this.username = '';
+      localStorage.removeItem('token');
+      router.push('/');
     },
     setToLogedIn(token, username, tier) {
       this.isLogedIn = true;

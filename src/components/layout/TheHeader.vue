@@ -3,6 +3,10 @@ import { useUserStore } from '../../store/user_store/store';
 
 const store = useUserStore();
 
+const handleLogout = () => {
+  store.logout();
+}
+
 </script>
 
 <template>
@@ -15,6 +19,7 @@ const store = useUserStore();
         <Button v-if="!store.isLogedIn" type="dark" to="/login">Login</Button>
         <Button v-if="store.isLogedIn" type="dark" to="/post">Post</Button>
         <Button type="gradientAnimated" to="/leaderboard">Leaderboard</Button>
+        <Button v-if="store.isLogedIn" @click="handleLogout" type="hollow">Logout</Button>
       </div>
     </div>
     <div class="header--userinfo">
