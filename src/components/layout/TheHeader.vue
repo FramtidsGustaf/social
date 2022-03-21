@@ -12,7 +12,7 @@ const store = useUserStore();
         <h1 class="header--content-title">Social</h1>
       </router-link>
       <div>
-        <Button type="dark" to="/login">Login</Button>
+        <Button v-if="!store.isLogedIn" type="dark" to="/login">Login</Button>
         <Button v-if="store.isLogedIn" type="dark" to="/post">Post</Button>
         <Button type="gradientAnimated" to="/leaderboard">Leaderboard</Button>
       </div>
