@@ -12,21 +12,25 @@
 
   &--list {
     list-style: none;
-    width: 50rem;
+    width: 60rem;
   }
 
   &--listitem {
-    height: 10rem;
+    height: fit-content;
     margin-bottom: 5rem;
 
     &-flex {
       display: flex;
-      align-items: center;
       justify-content: space-between;
     }
 
     &-author {
       font-size: 2rem;
+    }
+
+    &-post {
+      font-size: 1.5rem;
+      width: 48rem;
     }
 
     &-tier {
