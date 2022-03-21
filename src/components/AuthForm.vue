@@ -25,13 +25,15 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div class="auth-form" :class="{ valid: isValid }">
-    <h4 class="title">{{ props.action }}</h4>
-    <Input v-model="username" name="username" />
-    <Input v-model="password" type="password" name="password" />
-    <div>
-      <Button @click="handleSubmit" type="gradientAnimated">{{ props.action }}</Button>
-      <Button :to="link.destination">{{ link.title }}</Button>
-    </div>
+  <div class="auth-form">
+    <form @submit.prevent="handleSubmit" :class="{ valid: isValid }">
+      <h4 class="title">{{ props.action }}</h4>
+      <Input v-model="username" name="username" />
+      <Input v-model="password" type="password" name="password" />
+      <div>
+        <Button class="auth-form--submit-button" type="gradientAnimated">{{ props.action }}</Button>
+        <router-link :to="link.destination" class="auth-form--link">{{ link.title }}</router-link>
+      </div>
+    </form>
   </div>
 </template>
