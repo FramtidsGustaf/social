@@ -1,12 +1,15 @@
 <script setup>
 import Input from './UI/BaseInput.vue';
 import { ref } from 'vue';
+import { useUserStore } from '../store/user_store/store';
 
 const props = defineProps({
   action: {
     type: String
   }
 });
+
+const store = useUserStore();
 
 const username = ref('');
 const password = ref('');
@@ -16,16 +19,16 @@ const link = props.action === 'login' ?
   { title: "Already have an account?", destination: '/login' };
 
 const handleSubmit = () => {
-  isValid.value = true;
-  console.log(username.value, password.value);
+  if (props.action === 'login') store.logIn(username.value, password.value);
+  if (props.action === 'signin') store.signin(username.value, password.value);
 }
 </script>
 
 <template>
   <div class="auth-form" :class="{ valid: isValid }">
     <h4 class="title">{{ props.action }}</h4>
-    <Input v-model="username" name="username"/>
-    <Input v-model="password" type="password" name="password"/>
+    <Input v-model="username" name="username" />
+    <Input v-model="password" type="password" name="password" />
     <div>
       <Button @click="handleSubmit" type="gradientAnimated">{{ props.action }}</Button>
       <Button :to="link.destination">{{ link.title }}</Button>
