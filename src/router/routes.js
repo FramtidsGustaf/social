@@ -4,6 +4,7 @@ import PostPage from '../pages/PostPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import NotFound from '../pages/NotFound.vue';
 import SigninPage from '../pages/SigninPage.vue';
+import { useUserStore } from '../store/user_store/store';
 
 export default [
   {
@@ -16,6 +17,7 @@ export default [
   },
   {
     path: '/login',
+    name: 'Login',
     component: LoginPage,
   },
   {
@@ -25,6 +27,11 @@ export default [
   {
     path: '/post',
     component: PostPage,
+    beforeEnter: (_to, _from, next) => {
+      const store = useUserStore();
+      if (store.isLogedIn) return true;
+      next({ name: 'Login' });
+    },
   },
   {
     path: '/:pathMatch(.*)*',

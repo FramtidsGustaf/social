@@ -13,6 +13,7 @@ const app = createApp(App);
 app.component('Button', BaseButton);
 
 app.use(router);
+
 app.use(createPinia());
 
 app.mount('#app');
